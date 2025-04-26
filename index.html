@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iStore</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="js/index.js"></script>
+    <script src="/js/allclass.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<style>
+.video-container {
+    width: 70%; 
+    height: 180px; /* הגדרה לגודל קבוע */
+    background-color: black;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* שמירה על מיקום במרכז */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* התאמת הווידאו לגודל הקונטיינר */
+}
+
+
+</style>
+</head>
+<body>
+<!-- תפריט עליון -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid d-flex justify-content-center">
+    <a class="navbar-brand mx-3 myCustomNavLink" href="index.html"> 
+      <img src="images/shopping.png" alt="Logo"> iStore
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="index.html">דף הבית</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="catalog.html">קטלוג מוצרים</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="cart.html" style="display: none;">
+            <i class="fas fa-shopping-cart" > </i>  עגלת קניות
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="ordersLink" class="nav-link myCustomNavLink" href="orders.html" style="display: none;">
+            <i class="fas fa-box"></i> ההזמנות שלי
+          </a>
+        </li>
+        <li class="nav-item">
+          <span id="navUserLink" class="nav-link myCustomNavLink"></span>
+        </li>
+        <li class="nav-item">
+          <a id="adminLink" class="nav-link myCustomNavLink" href="admin.html" style="display: none;">
+            <i class="fas fa-cogs"></i> ניהול האתר
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutLink" class="nav-link myCustomNavLink logout-link" href="#" style="display: none;">
+            <i class="fas fa-sign-out-alt"></i> התנתק
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!--של תוכן העמוד DIV  -->
+<div class="containerOfPage">
+  <h1>iStore ברוכים הבאים לחנות</h1>
+  <p>כאן תוכלו למצוא מוצרי חשמל,מחשבים,קונסולות וסלולר</p>
+
+
+<div class="container mt-5">
+    <!-- אזור וידאו -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-12">
+            <div class="card shadow-lg border-0 video-container">
+                <div class="card-body p-0 d-flex align-items-center justify-content-center" style="background-color: #000;">
+                    <video id="myVideo" class="w-100" autoplay muted loop >
+                        <source src="/videos/videoplayback.mp4" type="video/mp4">
+                        דפדפן זה אינו תומך בהפעלת וידאו.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- המוצרים שנמכרים בחנות  -->
+<div class="product-flex" id="product-flex"><!-- הקונטיינר של כל הכרטסיות  -->
+    <div class="product-card">
+      <h2>טלפונים</h2>
+      <img src="images/phones.jpg">
+      <button class="btn btn-primary add-to-cart movetocatalog"><i class="fas fa-shopping-cart"></i>לחץ לצפייה</button>
+    </div>
+    <div class="product-card">
+      <h2>מחשבים</h2>
+      <img src="images/computers.jpg">
+      <button class="btn btn-primary add-to-cart movetocatalog"><i class="fas fa-shopping-cart"></i>לחץ לצפייה</button>
+    </div>
+    <div class="product-card">
+      <h2>קונסולות</h2>
+      <img src="images/consoles.jpg">
+      <button class="btn btn-primary add-to-cart movetocatalog"><i class="fas fa-shopping-cart"></i>לחץ לצפייה</button>
+    </div>
+    <div class="product-card">
+      <h2>מסכים</h2>
+      <img src="images/tvs.jpg">
+      <button class="btn btn-primary add-to-cart movetocatalog"><i class="fas fa-shopping-cart"></i>לחץ לצפייה</button>
+    </div>
+</div>
+<!-- טופס להשארת פרטים  -->
+<div class="formDiv">
+    <h2>השארת פרטים ליצירת קשר</h2>
+    <form id="registrationForm" novalidate>
+        <div class="mb-3" >
+            <label for="fullName" class="form-label">שם מלא</label>
+            <input type="text" class="form-control" id="fullName" placeholder="הכנס שם מלא" name="fullName" pattern="[A-Za-zא-ת]{2,}" title="שם מלא חייב להכיל לפחות 2 תווים הם אותיות" required>
+            <div class="valid-feedback">תקין</div>
+            <div class="invalid-feedback">אנא מלא את שדה זה בשם מלא שמכיל לפחות 2 תווים הם אותיות.</div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">מייל</label>
+            <input type="email" class="form-control" id="email" placeholder="הכנס מייל" name="email" required>
+            <div class="valid-feedback">תקין</div>
+            <div class="invalid-feedback">אנא הכנס כתובת מייל תקינה.</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">מספר טלפון</label>
+            <input type="tel" class="form-control" id="phone" placeholder="הכנס מספר טלפון" name="phone" pattern="\d{10}" required>
+            <div class="valid-feedback">תקין</div>
+            <div class="invalid-feedback">אנא הכנס מספר טלפון תקין בעל 10 ספרות.</div>
+        </div>
+        <button type="submit" class="btnsubmit">שלח</button>
+    </form>
+</div>
+<!-- פרטים ליצירת קשר -->
+<div class="contact">
+  <h2>פרטים ליצירת קשר</h2>
+    <div class="info">
+      <div>
+          <i class="fas fa-phone"></i>
+          <span>טלפון: 054-1234569</span>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <span>iStore@gmail.com :אימייל</span>
+      </div>
+      </div>
+
+
+
+
+
+      <div class="map">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.6943289054486!2d34.851612184983235!3d32.32145878111161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d400a1b1a3a11%3A0x80aa2fa4bff30317!2z16jXl9eV15XXnteZ15XXqSAxLCDXkdeT15zXmdec16jXldec!5e0!3m2!1she!2sil!4v1682603012839!5m2!1she!2sil"  loading="lazy">
+        </iframe>
+      </div>
+</div>
+</div>
+<footer>
+  <p>למבצעים נוספים עקבו אחרינו ברשתות החברתיות</p>
+  <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+</div>
+</footer>
+
+
+</body>
+</html>
