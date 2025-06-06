@@ -1,0 +1,44 @@
+.admin-actions {
+    max-width: 800px;
+    border: 1px solid white;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+}
+select {
+    direction: rtl;
+    text-align: right;
+  }
+.btnsubmit,.admin_card_btn{
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    max-width: 100%;
+    padding: 15px 30px 15px 30px;
+    margin: 0 auto; /* מרכז את הכפתור */
+    background: linear-gradient(145deg, rgb(95, 167, 240) 0%, rgb(76, 202, 224) 50%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    border-style: solid;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+.btnsubmit,.admin_card_btn:hover{
+    transform: scale(1.05);     
+    border-color:#212121;
+}
+.card-body{
+    border-radius: 20px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    border-style: solid;
+    background: linear-gradient(145deg, rgb(95, 167, 240) 0%, rgb(76, 202, 224) 50%);
+}
+.card-title, .card-text{
+    font-weight: bold;
+    color: white !important;
+}

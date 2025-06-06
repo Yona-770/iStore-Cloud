@@ -1,0 +1,92 @@
+
+/* עיצוב הצגת המוצר שנבחר*/
+#product-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#product-image
+{
+    width: 250px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+/* מדיה קווריס לעיצוב מובייל */
+@media (max-width: 768px) {
+    #product-image {
+        width: 50%;
+        max-width: 150px;
+    }
+}
+@media (max-width: 480px) {
+    #product-image {
+        width: 100%; /* כרטיס אחד בשורה אחת במסכים קטנים */
+        max-width: 100px;
+    }
+
+}
+#add-to-cart-btn{
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    max-width: 80%;
+    margin: 0 auto; /* מרכז את הכפתור */
+    background: linear-gradient(145deg, rgb(95, 167, 240) 0%, rgb(76, 202, 224) 50%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    border-style: solid;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+#add-to-cart-btn:hover{
+    border-color:#212121;
+    transform: scale(1.05); 
+}
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+.custom-alert-message {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #1fbedb;
+    font-weight: bold;
+}
+.custom-alert-btn-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* סגנון לכפתורים */
+.btnOfalert {
+    display: block;
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    max-width: 80%;
+    margin: 0 auto; /* מרכז את הכפתור */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: linear-gradient(145deg, rgb(95, 167, 240) 0%, rgb(76, 202, 224) 50%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    border-style: solid;
+    text-align: center;
+}

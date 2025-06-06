@@ -1,0 +1,66 @@
+/* השארת פרטים ליצירת קשר*/
+.login-container {
+    max-width: 800px;
+    border: 1px solid white;
+    margin: 50px auto;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+}
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.login-container-control {
+    direction: rtl;
+    position: relative; 
+}
+.btnsubmit {
+    border-radius: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    max-width: 100%;
+    font-weight: bold;
+    padding: 15px 30px 15px 30px;
+    margin: 0 auto; /* מרכז את הכפתור */
+    background: linear-gradient(145deg, rgb(95, 167, 240) 0%, rgb(76, 202, 224) 50%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    border-color: white;
+    border-style: solid;
+    text-align: center;
+    transition: all 0.5s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btnsubmit:hover{
+    transform: scale(1.05);     
+    border-color:#212121;
+}
+.register-link a {
+    color: #ffffff; /* צבע טקסט */
+    font-weight: bold; /* טקסט מודגש */
+    text-decoration: none; /* ללא קו תחתון */
+    transition: color 0.3s ease; /* מעבר חלק */
+}
+
+.register-link a:hover {
+    color: #212121; /* צבע שונה בריחוף */
+    text-decoration: underline; /* הוספת קו תחתון בריחוף */
+}
+
+.register-link a i {
+    margin-left: 5px; /* ריווח קטן בין האייקון לטקסט */
+}
+
+
+input, textarea {
+    text-align: right; /* מיישר את כל השדות לימין */
+}
+
+input[type="tel"] {
+    text-align: right; /* מוודא שמספר הטלפון מיושר לימין */
+}

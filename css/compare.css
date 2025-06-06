@@ -1,0 +1,376 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 7 עמודות בגודל שווה */
+    grid-template-rows: repeat(3, auto); /* 3 שורות בגובה אוטומטי */
+}
+
+.grid-item {
+    width: auto;
+    background-color: #212121;
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding: 10px;
+}
+/* תיאום  למסך  קטן*/
+@media (max-width: 480px) {
+    .grid-item
+    {   
+        padding: 1px;
+    }
+}
+#item1{
+    grid-row: 1;
+    grid-column: 1;
+}
+#item2{
+    grid-row: 1;
+    grid-column: 2;
+}
+#item3{
+    grid-row: 1;
+    grid-column: 3;
+}
+#item4{
+    grid-row: 1;
+    grid-column: 4;
+}
+#item5{
+    grid-row: 1;
+    grid-column: 5;
+}
+#item6{
+    grid-row: 1;
+    grid-column: 6;
+}
+
+#item11{
+    grid-row: 2;
+    grid-column: 1;
+}
+#item12{
+    grid-row: 2;
+    grid-column: 2;
+}
+#item13{
+    grid-row: 2;
+    grid-column: 3;
+}
+#item14{
+    grid-row: 2;
+    grid-column: 4;
+}
+#item15{
+    grid-row: 2;
+    grid-column: 5;
+}
+#item16{
+    grid-row: 2;
+    grid-column: 6;
+}
+
+#item17{
+    grid-row: 3;
+    grid-column: 1;
+}
+#item18{
+    grid-row: 3;
+    grid-column: 2;
+}
+#item19{
+    grid-row: 3;
+    grid-column: 3;
+}
+#item20{
+    grid-row: 3;
+    grid-column: 4;
+}
+#item21{
+    grid-row: 3;
+    grid-column: 5;
+}
+#item22{
+    grid-row: 3;
+    grid-column: 6;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 7 עמודות בגודל שווה */
+    grid-template-rows: repeat(3, auto); /* 3 שורות בגובה אוטומטי */
+}
+
+.grid-item {
+    width: auto;
+    background-color: #212121;
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding: 10px;
+}
+/* תיאום  למסך  קטן*/
+@media (max-width: 480px) {
+    .grid-item
+    {   
+        padding: 1px;
+    }
+}
+#item1{
+    grid-row: 1;
+    grid-column: 1;
+}
+#item2{
+    grid-row: 1;
+    grid-column: 2;
+}
+#item3{
+    grid-row: 1;
+    grid-column: 3;
+}
+#item4{
+    grid-row: 1;
+    grid-column: 4;
+}
+#item5{
+    grid-row: 1;
+    grid-column: 5;
+}
+#item6{
+    grid-row: 1;
+    grid-column: 6;
+}
+
+#item11{
+    grid-row: 2;
+    grid-column: 1;
+}
+#item12{
+    grid-row: 2;
+    grid-column: 2;
+}
+#item13{
+    grid-row: 2;
+    grid-column: 3;
+}
+#item14{
+    grid-row: 2;
+    grid-column: 4;
+}
+#item15{
+    grid-row: 2;
+    grid-column: 5;
+}
+#item16{
+    grid-row: 2;
+    grid-column: 6;
+}
+
+#item17{
+    grid-row: 3;
+    grid-column: 1;
+}
+#item18{
+    grid-row: 3;
+    grid-column: 2;
+}
+#item19{
+    grid-row: 3;
+    grid-column: 3;
+}
+#item20{
+    grid-row: 3;
+    grid-column: 4;
+}
+#item21{
+    grid-row: 3;
+    grid-column: 5;
+}
+#item22{
+    grid-row: 3;
+    grid-column: 6;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 7 עמודות בגודל שווה */
+    grid-template-rows: repeat(3, auto); /* 3 שורות בגובה אוטומטי */
+}
+
+.grid-item {
+    width: auto;
+    background-color: #212121;
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding: 10px;
+}
+/* תיאום  למסך  קטן*/
+@media (max-width: 480px) {
+    .grid-item
+    {   
+        padding: 1px;
+    }
+}
+#item1{
+    grid-row: 1;
+    grid-column: 1;
+}
+#item2{
+    grid-row: 1;
+    grid-column: 2;
+}
+#item3{
+    grid-row: 1;
+    grid-column: 3;
+}
+#item4{
+    grid-row: 1;
+    grid-column: 4;
+}
+#item5{
+    grid-row: 1;
+    grid-column: 5;
+}
+#item6{
+    grid-row: 1;
+    grid-column: 6;
+}
+
+#item11{
+    grid-row: 2;
+    grid-column: 1;
+}
+#item12{
+    grid-row: 2;
+    grid-column: 2;
+}
+#item13{
+    grid-row: 2;
+    grid-column: 3;
+}
+#item14{
+    grid-row: 2;
+    grid-column: 4;
+}
+#item15{
+    grid-row: 2;
+    grid-column: 5;
+}
+#item16{
+    grid-row: 2;
+    grid-column: 6;
+}
+
+#item17{
+    grid-row: 3;
+    grid-column: 1;
+}
+#item18{
+    grid-row: 3;
+    grid-column: 2;
+}
+#item19{
+    grid-row: 3;
+    grid-column: 3;
+}
+#item20{
+    grid-row: 3;
+    grid-column: 4;
+}
+#item21{
+    grid-row: 3;
+    grid-column: 5;
+}
+#item22{
+    grid-row: 3;
+    grid-column: 6;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 7 עמודות בגודל שווה */
+    grid-template-rows: repeat(3, auto); /* 3 שורות בגובה אוטומטי */
+}
+
+.grid-item {
+    width: auto;
+    background-color: #212121;
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding: 10px;
+}
+/* תיאום  למסך  קטן*/
+@media (max-width: 480px) {
+    .grid-item
+    {   
+        padding: 1px;
+    }
+}
+#item1{
+    grid-row: 1;
+    grid-column: 1;
+}
+#item2{
+    grid-row: 1;
+    grid-column: 2;
+}
+#item3{
+    grid-row: 1;
+    grid-column: 3;
+}
+#item4{
+    grid-row: 1;
+    grid-column: 4;
+}
+#item5{
+    grid-row: 1;
+    grid-column: 5;
+}
+#item6{
+    grid-row: 1;
+    grid-column: 6;
+}
+
+#item11{
+    grid-row: 2;
+    grid-column: 1;
+}
+#item12{
+    grid-row: 2;
+    grid-column: 2;
+}
+#item13{
+    grid-row: 2;
+    grid-column: 3;
+}
+#item14{
+    grid-row: 2;
+    grid-column: 4;
+}
+#item15{
+    grid-row: 2;
+    grid-column: 5;
+}
+#item16{
+    grid-row: 2;
+    grid-column: 6;
+}
+
+#item17{
+    grid-row: 3;
+    grid-column: 1;
+}
+#item18{
+    grid-row: 3;
+    grid-column: 2;
+}
+#item19{
+    grid-row: 3;
+    grid-column: 3;
+}
+#item20{
+    grid-row: 3;
+    grid-column: 4;
+}
+#item21{
+    grid-row: 3;
+    grid-column: 5;
+}
+#item22{
+    grid-row: 3;
+    grid-column: 6;
+}
