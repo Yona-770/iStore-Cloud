@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עגלת קניות</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/cartstyle.css?v1">
+    <script src="/js/cartjs.js?v8"></script>
+    <script src="/js/allclass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+label {
+    color: black;
+}
+
+</style>
+<body>
+
+<!-- תפריט עליון -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid d-flex justify-content-center">
+    <a class="navbar-brand mx-3 myCustomNavLink" href="index.html"> 
+      <img src="images/shopping.png" alt="Logo"> iStore
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="index.html">דף הבית</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="catalog.html">קטלוג מוצרים</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="cart.html" style="display: none;">
+            <i class="fas fa-shopping-cart" > </i>  עגלת קניות
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="ordersLink" class="nav-link myCustomNavLink" href="orders.html" style="display: none;">
+            <i class="fas fa-box"></i> ההזמנות שלי
+          </a>
+        </li>
+        <li class="nav-item">
+          <span id="navUserLink" class="nav-link myCustomNavLink"></span>
+        </li>
+        <li class="nav-item">
+          <a id="adminLink" class="nav-link myCustomNavLink" href="admin.html" style="display: none;">
+            <i class="fas fa-cogs"></i> ניהול האתר
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutLink" class="nav-link myCustomNavLink logout-link" href="#" style="display: none;">
+            <i class="fas fa-sign-out-alt"></i> התנתק
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div id="content-wrapper" style="display: none;">
+
+
+
+<div class="containerOfPage">
+  <h1>עגלת קניות</h1>
+
+  <!-- הצגת סכום כולל -->
+  <h2>סכום כולל: ₪ <span id="total-amount" style="color: black;">0</span></h2>
+
+  <!-- כל המוצרים שהוספו לעגלה -->
+  <div id="cart-container"></div>
+
+  <!-- כפתור פתיחת המודאל -->
+  <div class="container mt-4">
+      <button id="openPaymentModal" class="btn btn-primary">בצע תשלום</button>
+  </div>
+
+
+      <!-- מודאל חדש לתשלום -->
+      <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center" style="color: black;"> <!-- כאן מוסיפים טקסט שחור ומרכזים -->
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="paymentModalLabel">פרטי תשלום</h5> <!-- גם את הכותרת נמרכז -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="mb-3">
+                            <label for="customerEmail" class="form-label">כתובת</label>
+                            <input type="text" class="form-control text-center" id="customerEmail" required> <!-- גם שדה הטקסט מיושר -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">בחר אמצעי תשלום</label>
+                            <select class="form-select text-center" id="paymentMethod" required> <!-- גם הסלקט מיושר -->
+                                <option value="credit">כרטיס אשראי</option>
+                                <option value="bit">Bit</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">שלח אישור תשלום</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    
+
+</div>
+
+
+
+<footer>
+    <p>למבצעים נוספים עקבו אחרינו ברשתות החברתיות</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+</footer>
+
+</div>
+
+
+<div id="loading-spinner" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div class="spinner"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ממשק ניהול Admin</title>
+    <link rel="stylesheet" href="/css/login.css"> 
+    <link rel="stylesheet" href="/css/styles.css">  
+    <link rel="stylesheet" href="/css/admin.css">  
+    <script src="/js/allclass.js"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- תפריט עליון -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid d-flex justify-content-center">
+      <a class="navbar-brand mx-3 myCustomNavLink" href="index.html"> 
+        <img src="images/shopping.png" alt="Logo"> iStore
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+        <ul class="navbar-nav mx-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link myCustomNavLink" href="index.html">דף הבית</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link myCustomNavLink" href="catalog.html">קטלוג מוצרים</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link myCustomNavLink" href="cart.html" style="display: none;">
+              <i class="fas fa-shopping-cart" > </i>  עגלת קניות
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="ordersLink" class="nav-link myCustomNavLink" href="orders.html" style="display: none;">
+              <i class="fas fa-box"></i> ההזמנות שלי
+            </a>
+          </li>
+          <li class="nav-item">
+            <span id="navUserLink" class="nav-link myCustomNavLink"></span>
+          </li>
+          <li class="nav-item">
+            <a id="adminLink" class="nav-link myCustomNavLink" href="admin.html" style="display: none;">
+              <i class="fas fa-cogs"></i> ניהול האתר
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="logoutLink" class="nav-link myCustomNavLink logout-link" href="#" style="display: none;">
+              <i class="fas fa-sign-out-alt"></i> התנתק
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- תוכן העמוד -->
+<div class="containerOfPage">
+    <h2>Admin ממשק ניהול </h2>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">מספר יוזרים</h5>
+                        <p id="userCount" class="card-text">...</p>
+                        <button class="admin_card_btn" onclick="window.location.href='userManagement.html'">ניהול יוזרים</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">מספר מוצרים</h5>
+                        <p id="productCount" class="card-text">...</p>
+                        <button class="admin_card_btn" onclick="window.location.href='productManagement.html'">ניהול מוצרים</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">מספר השארות פרטים</h5>
+                        <p id="formDetailsCount" class="card-text">...</p>
+                        <button class="admin_card_btn" onclick="window.location.href='formDetailsManagement.html'">ניהול פניות</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- הוספת הנחה לפי קטגוריה או מוצר -->
+    <div class="admin-actions">
+        <h3>הוספת הנחה</h3>
+        <form id="discountForm">
+            <div class="mb-3">
+                <label for="discountType" class="form-label">בחר סוג הנחה</label>
+                <select class="form-select" id="discountType">
+                    <option value="" disabled selected>בחר סוג הנחה</option>
+                    <option value="category">קטגוריה</option>
+                    <option value="product">מוצר</option>
+                </select>
+            </div>
+            
+            <div class="mb-3" id="categorySelection" style="display: none;">
+                <label for="discountCategory" class="form-label">קטגוריה</label>
+                <select class="form-select" id="discountCategory">
+                    <!-- קטגוריות יטענו מהשרת -->
+                </select>
+            </div>
+            
+            <div class="mb-3" id="productSelection" style="display: none;">
+                <label for="discountProduct" class="form-label">מוצר</label>
+                <select class="form-select" id="discountProduct">
+                    <!-- מוצרים יטענו מהשרת -->
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="discountPercent" class="form-label">אחוז הנחה</label>
+                <input type="number" class="form-control" id="discountPercent" placeholder="הכנס אחוז הנחה" required>
+            </div>
+            <button type="submit" class="admin_card_btn">הוסף הנחה</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+  <p>למבצעים נוספים עקבו אחרינו ברשתות החברתיות</p>
+  <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        // שליפת מספר היוזרים
+        const userResponse = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/users/count');
+        const userCountData = await userResponse.json();
+        console.log(userCountData);
+        document.getElementById('userCount').textContent = userCountData.count;
+
+        // שליפת מספר המוצרים
+        const productResponse = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/products/count');
+        const productCountData = await productResponse.json();
+        console.log(productCountData);
+        document.getElementById('productCount').textContent = productCountData.count;
+
+        // שליפת מספר הפניות בטבלת form_details
+        const formDetailsResponse = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/form_details/count');
+        const formDetailsCountData = await formDetailsResponse.json();
+        console.log(formDetailsCountData);
+        document.getElementById('formDetailsCount').textContent = formDetailsCountData.count;
+        
+    } catch (error) {
+        console.error('Error fetching counts:', error);
+    }
+});
+
+// הצגת שדות לפי בחירת סוג ההנחה
+document.getElementById('discountType').addEventListener('change', function() {
+    updateDiscountSelection(this.value);
+});
+
+function updateDiscountSelection(discountType) {
+    const categorySelection = document.getElementById('categorySelection');
+    const productSelection = document.getElementById('productSelection');
+    
+    if (discountType === 'category') {
+        categorySelection.style.display = 'block';
+        productSelection.style.display = 'none';
+    } else if (discountType === 'product') {
+        categorySelection.style.display = 'none';
+        productSelection.style.display = 'block';
+    } else {
+        categorySelection.style.display = 'none';
+        productSelection.style.display = 'none';
+    }
+}
+
+// טען קטגוריות ומוצרים מהשרת
+async function loadCategoriesAndProducts() {
+    try {
+        // שליפת קטגוריות
+        const categoryResponse = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/categories');
+        const categories = await categoryResponse.json();
+        console.log(categories);
+
+        if (Array.isArray(categories)) {
+            const categorySelect = document.getElementById('discountCategory');
+            categorySelect.innerHTML = ''; // איפוס האפשרויות
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            });
+        } else {
+            console.error('Categories are not in the expected format');
+        }
+
+        // שליפת מוצרים
+        const productResponse = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/products/get_title');
+        const products = await productResponse.json();
+        console.log(products);
+
+        if (Array.isArray(products)) {
+            const productSelect = document.getElementById('discountProduct');
+            productSelect.innerHTML = ''; // איפוס האפשרויות
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.Id;
+                option.textContent = product.Title;
+                productSelect.appendChild(option);
+            });
+        } else {
+            console.error('Products are not in the expected format');
+        }
+    } catch (error) {
+        console.error('Error loading categories and products:', error);
+    }
+}
+
+loadCategoriesAndProducts();
+
+
+// טיפול בהוספת הנחה או ביטול הנחה
+document.getElementById('discountForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const discountType = document.getElementById('discountType').value;
+    const discountPercent = parseFloat(document.getElementById('discountPercent').value.trim());
+
+    let category = null;
+    let productId = null;
+
+    if (discountType === 'category') {
+        category = document.getElementById('discountCategory').value;
+    } else if (discountType === 'product') {
+        productId = document.getElementById('discountProduct').value;
+    }
+
+    try {
+        const response = await fetch('https://lukmrh5csd.execute-api.us-east-1.amazonaws.com/prod/discount', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ discountPercent, category, productId })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            alert('ההנחה הוספה בהצלחה!');
+            document.getElementById('discountForm').reset();
+            updateDiscountSelection(''); // איפוס השדות
+        } else {
+            alert(data.error || 'שגיאה בהוספת ההנחה.');
+        }
+    } catch (error) {
+        alert('שגיאה בחיבור לשרת.');
+        console.error('Error:', error);
+    }
+});
+
+</script>
+
+</body>
+</html>

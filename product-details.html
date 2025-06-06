@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרטי מוצר</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <script src="js/product.js"></script>
+    <script src="/js/allclass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+    <style>
+        /* עיצוב הכוכבים */
+        .rating {
+            direction: rtl;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .star {
+            font-size: 2rem;
+            color: #d3d3d3;
+            cursor: pointer;
+        }
+        .star.checked {
+            color: gold;
+        }
+
+        /* עיצוב checkbox שיהיה במרכז */
+        .checkbox-container {
+            text-align: center;
+        }
+        .form-check-inline {
+            display: inline-block;
+        }
+        .is-invalid {
+            border-color: red;
+        }
+        .is-valid {
+            border-color: green;
+        }
+     /* עיצוב שדה לא תקין */
+    input.is-invalid, textarea.is-invalid, select.is-invalid {
+        border-color: red;
+    }
+
+    input.is-valid, textarea.is-valid, select.is-valid {
+        border-color: green;
+    }
+
+    /* הודעת שגיאה מוסתרת כברירת מחדל */
+    .error-message {
+        color: red;
+        font-size: 0.9rem;
+        display: none;
+    }
+
+    /* הצגת הודעת שגיאה אם השדה לא תקין */
+    input.is-invalid + .error-message,
+    textarea.is-invalid + .error-message,
+    select.is-invalid + .error-message {
+        display: block;
+    }
+    </style>
+<body>
+<!-- תפריט עליון -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid d-flex justify-content-center">
+    <a class="navbar-brand mx-3 myCustomNavLink" href="index.html"> 
+      <img src="images/shopping.png" alt="Logo"> iStore
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="index.html">דף הבית</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="catalog.html">קטלוג מוצרים</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link myCustomNavLink" href="cart.html" style="display: none;">
+            <i class="fas fa-shopping-cart" > </i>  עגלת קניות
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="ordersLink" class="nav-link myCustomNavLink" href="orders.html" style="display: none;">
+            <i class="fas fa-box"></i> ההזמנות שלי
+          </a>
+        </li>
+        <li class="nav-item">
+          <span id="navUserLink" class="nav-link myCustomNavLink"></span>
+        </li>
+        <li class="nav-item">
+          <a id="adminLink" class="nav-link myCustomNavLink" href="admin.html" style="display: none;">
+            <i class="fas fa-cogs"></i> ניהול האתר
+          </a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutLink" class="nav-link myCustomNavLink logout-link" href="#" style="display: none;">
+            <i class="fas fa-sign-out-alt"></i> התנתק
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="containerOfPage">
+<!--LOCAL STORGE פירוט המוצר שנבחר מהקטלוג דרך מידע שמתקבל ב -->
+<div id="product-details">
+    <h1 id="product-title"></h1>
+    <img id="product-image">
+    <p id="product-description"></p>
+    <p id="product-price"></p>
+    <p id="product-availability"></p>
+    <button id="add-to-cart-btn" class="btn btn-primary">הוסף לעגלה</button>
+</div>      
+<div id="custom-alert" class="custom-alert">
+    <button id="custom-alert-close-btn" class="btnOfalert">X</button>
+    <div id="custom-alert-message" class="custom-alert-message"></div>
+    <div id="custom-alert-btn-container" class="custom-alert-btn-container">
+        <button id="go-to-cart-btn" class="btnOfalert">מעבר לעגלת קניות</button>
+        <button id="go-to-catalog-btn" class="btnOfalert">חזרה לקטלוג מוצרים</button>
+    </div>
+</div>
+
+
+</div>
+
+
+</div>
+<footer>
+    <p>למבצעים נוספים עקבו אחרינו ברשתות החברתיות</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+</footer>
+
+<script>
+    // טיפול בכל השדות בטופס
+document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    // מניעת שליחה כברירת מחדל
+    event.preventDefault();
+
+    // קבלת כל השדות בטופס
+    const inputs = this.querySelectorAll('input, textarea, select');
+    let isFormValid = true;
+
+    inputs.forEach(input => {
+        if (!input.checkValidity()) {
+            // אם השדה לא תקין
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+            isFormValid = false;
+        } else {
+            // אם השדה תקין
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+        }
+    });
+
+    // אם כל השדות תקינים, אפשר להמשיך
+    if (isFormValid) {
+        alert('הטופס נשלח בהצלחה!');
+        this.submit();
+    }
+});
+
+
+
+  // הוספת מאזין לאירועים לכוכבים
+    document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('click', function() {
+            let rating = this.getAttribute('data-value');
+            
+            // עדכון הכוכבים המודגשים
+            document.querySelectorAll('.star').forEach(star => {
+                if (star.getAttribute('data-value') <= rating) {
+                    star.classList.add('checked');  // צבע את הכוכבים בצהוב
+                } else {
+                    star.classList.remove('checked');  // הסר את הצבע הצהוב
+                }
+            });
+
+            // שמירת הערך הסופי
+            document.getElementById('ratingValue').value = rating;
+        });
+    });
+
+
+
+</script>
+
+
+</body>
+</html>
